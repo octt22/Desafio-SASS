@@ -1,0 +1,39 @@
+nav {
+    background: $colorFondo;
+    box-sizing: border-box;
+    position: sticky;
+    height: 200px;
+    margin-bottom: -3px;
+    div a img.logo {
+        width: 400px;
+        height: auto;
+        padding: 8px;
+    }
+    div.barranav {
+        box-sizing: border-box;
+        overflow: auto;
+        padding: 2px;
+        margin-top: -80PX;
+        text-align: right;
+        ul {
+            height: 80px;
+            li {
+                font-family: 'M PLUS 2', sans-serif;
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10PX;
+                text-decoration: none;
+                color: $colorTitulos;
+                a {
+                    text-decoration: none;
+                    color: $colorTitulos;
+                    font-weight: bold;
+                    transition: 1s;
+                    a:visited {
+                        color: $colorTitulos;
+                    }
+                }
+            }
+        }
+    }
+}
