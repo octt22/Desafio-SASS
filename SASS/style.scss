@@ -6,6 +6,23 @@ $colorFondo: rgb(146, 146, 146);
 
 @import "nav";
 
+/* Mixin */
+
+@mixin h2m{
+    padding-top: 2px;
+    font-size: 20px;
+    text-align: left;
+    color: $colorTitulos;
+}
+
+/* Map */
+
+$colores:(
+    colorTitulos: #3D3C3C,
+    colorFondo: #C4C4C4,
+    colorBorde: #ffffff,
+);
+
 /* SASS */
 * {
     margin: 0px;
@@ -37,7 +54,7 @@ main {
         img{
             display: grid;
             margin: 10px 10px;
-            border: 1px solid white;
+            border: 1px solid map-get( $colores,colorBorde );
             width: 400px;
             height: 400px;
             object-fit: cover;
@@ -52,7 +69,7 @@ main {
 footer {
     height: 220px;
     font-family: 'M PLUS 2', sans-serif;
-    background-color: $colorFondo;
+    background-color: map-get($colores,colorFondo);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,31 +82,21 @@ footer {
             display: inline-block;
         }
     .footerQuienes {
+        margin: 15px 15px;
         width: 350px;
         height: 150px;
         display: inline-block ;
         h2 {
-            padding-top: 2px;
-            font-size: 20px;
-            display: inline-block ;
-            text-align: center;
-            color: $colorTitulos;
+            @include h2m
         }
         p {
-            text-align: center;
+            text-align: left;
         }
     }
     .footerContacto {
-        margin: 15px 15px;
-        width: 250px;
-        height: 150px;
-        display: inline-block ;
+        @extend .footerQuienes;
         h2 {
-            padding-top: 2px;
-            font-size: 20px;
-            display: inline-block ;
-            text-align: center;
-            color: $colorTitulos;
+            @include h2m
         }
     }
     .footerLocation {
